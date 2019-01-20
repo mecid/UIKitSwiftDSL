@@ -11,23 +11,28 @@ import UIKitSwiftDSL
 class ViewController: UIViewController {
     override func loadView() {
         view = stack {
+            $0.spacing = 16
             $0.axis = .vertical
             $0.isLayoutMarginsRelativeArrangement = true
 
             $0.stack {
+                $0.distribution = .fillEqually
                 $0.axis = .horizontal
 
                 $0.label {
+                    $0.textAlignment = .center
                     $0.textColor = .white
                     $0.text = "Hello"
                 }
 
                 $0.label {
+                    $0.textAlignment = .center
                     $0.textColor = .white
                     $0.text = "World"
                 }
 
-                $0.label {
+                $0.customLabel {
+                    $0.textAlignment = .center
                     $0.textColor = .white
                     $0.text = "!!!"
                 }
