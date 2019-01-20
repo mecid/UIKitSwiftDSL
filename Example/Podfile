@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UIKitSwiftDSL_Example' do
+  pod 'UIKitSwiftDSL', :path => '../'
+
+  target 'UIKitSwiftDSL_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
