@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'Swift DSL for UIKit. Simple DSL in Swift which gives you opportunity to write layout code in declarative way'
+  s.description      = 'Swift DSL for UIKit. Simple DSL in Swift which gives you opportunity to write layout code in declarative way.'
   s.homepage         = 'https://github.com/mecid/UIKitSwiftDSL'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Majid Jabrayilov' => 'cmecid@gmail.com' }
