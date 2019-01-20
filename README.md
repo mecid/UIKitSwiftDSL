@@ -92,6 +92,13 @@ it, simply add the following line to your Podfile:
 pod 'UIKitSwiftDSL'
 ```
 
+UIKitSwiftDSL is available through [Carthage](https://github.com/Carthage/Carthage). To install
+it, simply add the following line to your Cartfile:
+
+```ruby
+github "mecid/UIKitSwiftDSL"
+```
+
 ## Author
 
 Majid Jabrayilov, cmecid@gmail.com
