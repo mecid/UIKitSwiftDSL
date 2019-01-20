@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                 }
             }
 
-            $0.button {
+            let messageButton = $0.button {
                 $0.tintColor = .white
                 $0.setTitle("Say Hi!", for: .normal)
             }

@@ -1,6 +1,7 @@
 # UIKitSwiftDSL
 
 [![Version](https://img.shields.io/cocoapods/v/UIKitSwiftDSL.svg?style=flat)](https://cocoapods.org/pods/UIKitSwiftDSL)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/UIKitSwiftDSL.svg?style=flat)](https://cocoapods.org/pods/UIKitSwiftDSL)
 [![Platform](https://img.shields.io/cocoapods/p/UIKitSwiftDSL.svg?style=flat)](https://cocoapods.org/pods/UIKitSwiftDSL)
 
@@ -9,30 +10,35 @@ Swift DSL for UIKit. Simple DSL in Swift which gives you opportunity to write la
 ## Usage
 
 ```swift
-stack {
+let rootView = stack {
+    $0.spacing = 16
     $0.axis = .vertical
     $0.isLayoutMarginsRelativeArrangement = true
 
     $0.stack {
+        $0.distribution = .fillEqually
         $0.axis = .horizontal
 
         $0.label {
+            $0.textAlignment = .center
             $0.textColor = .white
             $0.text = "Hello"
         }
 
         $0.label {
+            $0.textAlignment = .center
             $0.textColor = .white
             $0.text = "World"
         }
 
-        $0.label {
+        $0.customLabel {
+            $0.textAlignment = .center
             $0.textColor = .white
             $0.text = "!!!"
         }
     }
 
-    $0.button {
+    let messageButton = $0.button {
         $0.tintColor = .white
         $0.setTitle("Say Hi!", for: .normal)
     }
@@ -40,6 +46,36 @@ stack {
     $0.view {
         $0.backgroundColor = .clear
     }
+}
+```
+
+## Custom View
+If you are using some Custom Views in your project you can easily add it to support DSL
+
+```swift
+import UIKitSwiftDSL
+
+class CustomLabel: UILabel {
+// Custom implementation here
+}
+
+extension UIView {
+    @discardableResult
+    func customLabel(apply closure: (CustomLabel) -> Void) -> CustomLabel {
+        return custom(CustomLabel(), apply: closure)
+    }
+}
+```
+
+## AutoLayout
+UIKitSwiftDSL doesn't have any logic related to AutoLayout. You can use any library you want
+
+```swift
+$0.button {
+    $0.tintColor = .white
+    $0.setTitle("Say Hi!", for: .normal)
+    
+    // Add you AutoLayout code here.
 }
 ```
 
