@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/UIKitSwiftDSL.svg?style=flat)](https://cocoapods.org/pods/UIKitSwiftDSL)
 [![Platform](https://img.shields.io/cocoapods/p/UIKitSwiftDSL.svg?style=flat)](https://cocoapods.org/pods/UIKitSwiftDSL)
 
-Swift DSL for UIKit. Simple DSL in Swift which gives you opportunity to write layout code in declarative way.
+Swift DSL for UIKit. Simple DSL in Swift which gives you opportunity to write layout code in readable and declarative way.
 
 ## Usage
 
@@ -50,7 +50,7 @@ let rootView = stack {
 ```
 
 ## Custom View
-If you are using some Custom Views in your project you can easily add it to support DSL
+If you are using some Custom Views in your project you can easily add it to support DSL.
 
 ```swift
 import UIKitSwiftDSL
@@ -68,14 +68,14 @@ extension UIView {
 ```
 
 ## AutoLayout
-UIKitSwiftDSL doesn't have any logic related to AutoLayout. You can use any library you want
+UIKitSwiftDSL doesn't have any logic related to AutoLayout. You can use any library you want.
 
 ```swift
 $0.button {
     $0.tintColor = .white
     $0.setTitle("Say Hi!", for: .normal)
     
-    // Add you AutoLayout code here.
+    // Add your AutoLayout code here.
 }
 ```
 
