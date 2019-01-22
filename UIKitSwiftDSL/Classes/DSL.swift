@@ -6,14 +6,12 @@ import WebKit
 import MapKit
 import MetalKit
 
-@discardableResult
 public func view(apply closure: (UIView) -> Void) -> UIView {
     let view = UIView()
     closure(view)
     return view
 }
 
-@discardableResult
 public func stack(apply closure: (UIStackView) -> Void) -> UIStackView {
     let stack = UIStackView()
     closure(stack)
