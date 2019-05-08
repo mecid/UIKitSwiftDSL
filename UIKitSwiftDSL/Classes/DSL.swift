@@ -1,5 +1,4 @@
 import UIKit
-import ARKit
 import SceneKit
 import SpriteKit
 import WebKit
@@ -166,18 +165,6 @@ extension UIView {
     public func webView(with config: WKWebViewConfiguration,
                  apply closure: (WKWebView) -> Void) -> WKWebView {
         return custom(WKWebView(frame: .zero, configuration: config), apply: closure)
-    }
-
-    @available(iOS 11.0, *)
-    @discardableResult
-    public func arSceneView(apply closure: (ARSCNView) -> Void) -> ARSCNView {
-        return custom(ARSCNView(), apply: closure)
-    }
-
-    @available(iOS 11.0, *)
-    @discardableResult
-    public func arSpriteView(apply closure: (ARSKView) -> Void) -> ARSKView {
-        return custom(ARSKView(), apply: closure)
     }
 
     @discardableResult
